@@ -1,6 +1,6 @@
 // Dependencies
 var express = require("express");
-var morgan = require("morgan");
+var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // Scraping
@@ -17,7 +17,7 @@ var PORT = process.env.PORT || 3000;
 var app = express();
 
 // Morgan is used to log requests
-app.use(morgan("dev"));
+app.use(logger("dev"));
 
 // Parse request body as JSON
 app.use(express.urlencoded({ extended: true }));
@@ -31,7 +31,7 @@ app.use(express.static("public"));
 var MONGODB_URI =
   process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Route for scraping articles
 app.get("/scrape", function(req, res) {
