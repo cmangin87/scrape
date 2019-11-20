@@ -1,0 +1,34 @@
+* {
+  background-color: darkred;
+}
+
+h1 {
+  font-size: 85px;
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px;
+  font-style: italic;
+  color: white;
+  text-align: center;
+}
+
+#btn-scrape {
+  font-size: 50px;
+  color: goldenrod;
+  text-align: center;
+}
+
+#btn-articles {
+  font-size: 50px;
+  color: goldenrod;
+  text-align: center;
+}
+
+#articles {
+    text-align: left;
+    color: white
+    font-size: 36px;
+}
