@@ -61,6 +61,17 @@ app.get("/scrape", function(req, res) {
     });
 });
 
+// Route for getting articles from database
+app.get("/articles", function(req, res) {
+  db.Article.find({})
+    .then(function(dbArticle) {
+      res.json(dbArticle);
+    })
+    .catch(function(err) {
+      res.json(err);
+    });
+});
+
 // Route for grabbing specific articles by id
 app.get("/articles/:id", function(req, res) {
   db.Article.findOne({ _id: req.params.id })
